@@ -1,56 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freelance OS - Bientôt disponible</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'OS du Freelance | Le système tout-en-un pour indépendants</title>
+  <meta name="description" content="Automatise ta prospection, gère tes clients et organise ton business avec L'OS du Freelance. Template Notion + 50 Prompts IA." />
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: #07111f;
       color: #ffffff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 0 40px;
       text-align: center;
     }
-    .container {
-      max-width: 600px;
-      padding: 20px;
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      color: #8ce7ff;
+      font-size: 14px;
+      margin-bottom: 24px;
+      background: rgba(140, 231, 255, 0.08);
+      font-weight: 600;
     }
+
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: 48px;
+      line-height: 1.1;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #c7d2e4;
+      max-width: 780px;
+      margin: 0 auto 40px;
+    }
+
+    /* BOUTONS */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 12px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-free {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-premium {
       background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+      font-size: 20px;
+      padding: 20px 32px;
+    }
+
+    .small-note {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    /* SECTION PREMIUM */
+    .premium-section {
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, rgba(7, 17, 31, 0) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .premium-title {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .premium-subtitle {
+      font-size: 18px;
+      color: #c7d2e4;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 50px;
+      text-align: left;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #8ce7ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-card p {
+      color: #b8c4d7;
+      font-size: 15px;
+    }
+
+    .price-tag {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff, #8ce7ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    p {
-      font-size: 18px;
+
+    .price-note {
       color: #94a3b8;
-      line-height: 1.6;
-    }
-    .badge {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
       font-size: 14px;
-      color: #8ce7ff;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #7f8ea3;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .premium-title { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Freelance OS</h1>
-    <p>Le système d'exploitation ultime pour les freelances arrive très bientôt.</p>
-    <p>Préparez-vous à automatiser votre prospection et à gagner du temps.</p>
-    <div class="badge">🚧 Site en construction 🚧</div>
-  </div>
+
+  <!-- SECTION 1 : HERO & BOUTON GRATUIT -->
+  <main class="container">
+    <section class="hero">
+      <div class="badge">🎁 Offre de lancement</div>
+      <h1>Freelances : Arrêtez de gérer votre business sur des bouts de papier.</h1>
+      <p class="subtitle">
+        Automatisez votre prospection, gérez vos clients sans stress et organisez votre activité de A à Z avec le système tout-en-un conçu pour les indépendants.
+      </p>
+
+      <div class="cta-group">
+        <a class="btn btn-free" href="https://produktionpro.gumroad.com/l/script-email" target="_blank">
+          📥 Télécharger le guide gratuit (Script d'email)
+        </a>
+        <span class="small-note">Gratuit - Aucun paiement requis.</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 2 : OFFRE PREMIUM (L'OS DU FREELANCE) -->
+  <section class="premium-section">
+    <div class="container">
+      <h2 class="premium-title">Passez au niveau supérieur avec L'OS du Freelance</h2>
+      <p class="premium-subtitle">
+        Le système d'exploitation complet pour piloter votre activité. Plus de chaos administratif, plus de prospects oubliés. Juste de la croissance.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🧠 Le Template Notion Ultime</h3>
+          <p>Votre cerveau business externalisé. CRM complet pour suivre vos prospects, gestionnaire de projets avec deadlines, et suivi de trésorerie pour ne plus jamais courir après une facture.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🤖 Le Moteur IA (50 Prompts)</h3>
+          <p>Un guide PDF de plus de 30 pages avec 50 prompts prêts à copier-coller dans ChatGPT. Automatisez vos emails à froid, vos relances, vos devis et vos posts LinkedIn en quelques secondes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>⚡ Accès immédiat et à vie</h3>
+          <p>Pas d'abonnement mensuel caché. Vous payez une fois, vous téléchargez tout instantanément, et vous gardez accès aux mises à jour futures du template.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🛡️ Conçu pour l'action</h3>
+          <p>Pensé spécifiquement pour les freelances, consultants et coachs francophones qui veulent gagner du temps sur l'administratif pour se concentrer sur leur métier.</p>
+        </div>
+      </div>
+
+      <div class="price-tag">47 €</div>
+      <p class="price-note">Paiement unique et sécurisé via Gumroad. Accès immédiat après l'achat.</p>
+
+      <a class="btn btn-premium" href="https://produktionpro.gumroad.com/l/gpqbr" target="_blank">
+        🚀 Acheter L'OS du Freelance maintenant
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Freelance OS - Tous droits réservés.
+    </div>
+  </footer>
+
 </body>
 </html>
